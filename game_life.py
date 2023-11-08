@@ -30,3 +30,10 @@ def update_grid(grid,x,y):
             elif live_neighbors  >1 or live_neighbors == 3:
                 new_grid[i][ j] = 1      
     return new_grid
+grid=create_initial_grid(5,5)
+grid[2][2]=1
+grid[2][3]=1
+grid[2][4]=1
+grid[3][2]=1
+grid[3][3]=1
+print(update_grid(grid,5,5))

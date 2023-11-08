@@ -23,17 +23,13 @@ def update_grid(grid,x,y):
                         live_neighbors+=grid[new_x][new_y]   
             if grid[i][j] == 1:
                 print(live_neighbors)
-                if live_neighbors>1 or live_neighbors == 3:
-                    new_grid[i][ j] = 1
+                if live_neighbors<2 or live_neighbors > 3:
+                    new_grid[i][ j] = 0
                 else:
-                    new_grid[i][j] = 0 
-            elif live_neighbors  >1 or live_neighbors == 3:
-                new_grid[i][ j] = 1      
+                    new_grid[i][j] = 1
+            elif live_neighbors == 3:
+                new_grid[i][ j] = 1    
+            else:
+                new_grid[i][ j] = 0  
     return new_grid
-grid=create_initial_grid(5,5)
-grid[2][2]=1
-grid[2][3]=1
-grid[2][4]=1
-grid[3][2]=1
-grid[3][3]=1
-print(update_grid(grid,5,5))
+

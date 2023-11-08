@@ -22,8 +22,11 @@ def update_grid(grid,x,y):
                     if 0<=new_x<y and 0<=new_y<x:
                         live_neighbors+=grid[new_x][new_y]   
             if grid[i][j] == 1:
-                if live_neighbors < 1:
-                    new_grid[i][ j] = 0
+                print(live_neighbors)
+                if live_neighbors>1 or live_neighbors == 3:
+                    new_grid[i][ j] = 1
                 else:
-                    new_grid[i][j] = 1               
+                    new_grid[i][j] = 0 
+            elif live_neighbors  >1 or live_neighbors == 3:
+                new_grid[i][ j] = 1      
     return new_grid
